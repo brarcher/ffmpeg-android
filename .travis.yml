@@ -1,0 +1,24 @@
+language: android
+jdk: oraclejdk8
+sudo: yes
+
+android:
+  components:
+    - tools
+    - build-tools-25.0.3
+    - platform-tools
+    # SDK Version to compile project
+    - android-26
+    
+before_install:
+    - git clone --depth 1 https://github.com/urho3d/android-ndk.git $HOME/android-ndk-root
+    - export ANDROID_NDK=$HOME/android-ndk-root
+    - export PATH=$PATH:$ANDROID_NDK/
+    - mkdir "$ANDROID_HOME/licenses" || true
+    - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+    - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+    - sudo apt-get --quiet --yes install build-essential git autoconf libtool pkg-config gperf gettext yasm python-lxml
+    - 
+script:
+    - ./init_update_libs.sh
+    - ./android_build.sh
