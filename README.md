@@ -1,4 +1,4 @@
-[FFmpeg-Android](http://hiteshsondhi88.github.io/ffmpeg-android/) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FFmpeg--Android-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/925) [![Build Status](https://travis-ci.org/trongvu/ffmpeg-android.svg?branch=master)](https://github.com/trongvu/ffmpeg-android)
+[FFmpeg-Android](http://hiteshsondhi88.github.io/ffmpeg-android/) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FFmpeg--Android-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/925) [![Build Status](https://travis-ci.org/trongvu/ffmpeg-android.svg?branch=master)](https://travis-ci.org/trongvu/ffmpeg-android)
 ==============
 
 * FFmpeg for Android compiled with x264, libass, fontconfig, freetype and fribidi
