@@ -11,12 +11,15 @@ case $1 in
   x86)
     CPU='i686'
   ;;
+  arm64)
+    CPU='cortex-a57'
+  ;;
 esac
 
 make clean
 
 ./configure \
---target-os="$TARGET_OS" \
+--target-os="android" \
 --cross-prefix="$CROSS_PREFIX" \
 --arch="$NDK_ABI" \
 --cpu="$CPU" \
@@ -35,7 +38,7 @@ make clean
 --enable-version3 \
 --enable-hardcoded-tables \
 --disable-ffplay \
---disable-ffprobe \
+--enable-ffprobe \
 --enable-gpl \
 --enable-yasm \
 --disable-doc \

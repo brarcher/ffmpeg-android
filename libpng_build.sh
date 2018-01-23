@@ -8,7 +8,7 @@ make clean
 
 ARM_NEON="no"
 case $1 in
-  armeabi-v7a-neon)
+  armeabi-v7a-neon | arm64)
     ARM_NEON="yes"
     ;;
 esac

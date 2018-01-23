@@ -22,9 +22,16 @@ case $1 in
     NDK_CROSS_PREFIX="i686-linux-android"
     CFLAGS="$CFLAGS -march=i686"
   ;;
+  arm64)
+    NDK_ABI='arm64'
+    NDK_TOOLCHAIN_ABI='aarch64-linux-android'
+    NDK_CROSS_PREFIX="${NDK_TOOLCHAIN_ABI}"
+    ANDROID_API_VERSION=21
+;;
 esac
 
 TOOLCHAIN_PREFIX=${BASEDIR}/toolchain-android
+echo  ${ANDROID_NDK_ROOT_PATH}/build/tools/make-standalone-toolchain.sh --toolchain=${NDK_TOOLCHAIN_ABI}-${NDK_TOOLCHAIN_ABI_VERSION} --platform=android-${ANDROID_API_VERSION} --install-dir=${TOOLCHAIN_PREFIX}
 if [ ! -d "$TOOLCHAIN_PREFIX" ]; then
   ${ANDROID_NDK_ROOT_PATH}/build/tools/make-standalone-toolchain.sh --toolchain=${NDK_TOOLCHAIN_ABI}-${NDK_TOOLCHAIN_ABI_VERSION} --platform=android-${ANDROID_API_VERSION} --install-dir=${TOOLCHAIN_PREFIX}
 fi

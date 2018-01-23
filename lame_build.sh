@@ -7,7 +7,7 @@ pushd lame-3.99.5
 make clean
 
 case $1 in
-  armeabi-v7a | armeabi-v7a-neon)
+  armeabi-v7a | armeabi-v7a-neon  | arm64)
     HOST=arm-linux
   ;;
   x86)
