@@ -3,7 +3,7 @@ jdk: oraclejdk8
 sudo: yes
     
 before_install:
-    - git clone --depth 1 https://github.com/urho3d/android-ndk.git $HOME/android-ndk-root
+    - git clone --depth 1 https://github.com/brarcher/android-ndk.git $HOME/android-ndk-root
     - export ANDROID_NDK=$HOME/android-ndk-root
     - export PATH=$PATH:$ANDROID_NDK/
     - sudo apt-get --quiet --yes install build-essential git autoconf libtool pkg-config gperf gettext yasm python-lxml
