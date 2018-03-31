@@ -4,12 +4,19 @@
 
 pushd ffmpeg
 
+ASM_OPTION=""
+YASM_OPTION="--enable-yasm"
+
 case $1 in
   armeabi-v7a | armeabi-v7a-neon)
     CPU='cortex-a8'
   ;;
   x86)
     CPU='i686'
+    # Some assembly has text relocations, and cannot execute on
+    # later Android systems.
+    ASM_OPTION="--disable-asm"
+    YASM_OPTION="--disable-yasm"
   ;;
   arm64)
     CPU='cortex-a57'
@@ -40,7 +47,8 @@ make clean
 --disable-ffplay \
 --enable-ffprobe \
 --enable-gpl \
---enable-yasm \
+${ASM_OPTION} \
+${YASM_OPTION} \
 --disable-doc \
 --disable-shared \
 --enable-static \
