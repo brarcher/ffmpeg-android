@@ -9,7 +9,19 @@ fi
 ANDROID_API_VERSION=9
 NDK_TOOLCHAIN_ABI_VERSION=4.8
 
-NUMBER_OF_CORES=$(sysctl -n hw.ncpu)
+NUMBER_OF_CORES=1
+which nproc >/dev/null
+if [ $? -eq 0 ]; then
+   NUMBER_OF_CORES=$(nproc)
+fi
+if [ $NUMBER_OF_CORES -eq 1 ]; then
+   # Attempt to determine cores if running on macOS
+   which sysctl >/dev/null
+   if [ $? -eq 0 ]; then
+      NUMBER_OF_CORES=$(sysctl -n hw.ncpu)
+   fi
+fi
+
 HOST_UNAME=$(uname -m)
 TARGET_OS=linux
 
