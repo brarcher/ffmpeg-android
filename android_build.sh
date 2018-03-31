@@ -12,6 +12,7 @@ fi
 
 for i in "${SUPPORTED_ARCHITECTURES[@]}"
 do
+  echo "Building for architecture $i"
   rm -rf ${TOOLCHAIN_PREFIX}
   # $1 = architecture
   # $2 = base directory
