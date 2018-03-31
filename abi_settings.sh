@@ -34,6 +34,10 @@ TOOLCHAIN_PREFIX=${BASEDIR}/toolchain-android
 echo  ${ANDROID_NDK_ROOT_PATH}/build/tools/make-standalone-toolchain.sh --toolchain=${NDK_TOOLCHAIN_ABI}-${NDK_TOOLCHAIN_ABI_VERSION} --platform=android-${ANDROID_API_VERSION} --install-dir=${TOOLCHAIN_PREFIX}
 if [ ! -d "$TOOLCHAIN_PREFIX" ]; then
   ${ANDROID_NDK_ROOT_PATH}/build/tools/make-standalone-toolchain.sh --toolchain=${NDK_TOOLCHAIN_ABI}-${NDK_TOOLCHAIN_ABI_VERSION} --platform=android-${ANDROID_API_VERSION} --install-dir=${TOOLCHAIN_PREFIX}
+  if [ $? -ne 0 ]; then
+    echo "Failed to setup toolchain"
+    exit 1
+  fi
 fi
 CROSS_PREFIX=${TOOLCHAIN_PREFIX}/bin/${NDK_CROSS_PREFIX}-
 NDK_SYSROOT=${TOOLCHAIN_PREFIX}/sysroot
