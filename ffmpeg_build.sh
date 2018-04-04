@@ -43,6 +43,12 @@ make clean
 --disable-debug \
 --disable-ffserver \
 --disable-network \
+--disable-filters \
+--enable-filter=fps \
+--enable-filter=split \
+--enable-filter=palettegen \
+--enable-filter=fifo \
+--enable-filter=paletteuse \
 --enable-version3 \
 --enable-hardcoded-tables \
 --disable-ffplay \
