@@ -42,6 +42,7 @@ make clean
 --enable-pthreads \
 --disable-debug \
 --disable-ffserver \
+--disable-network \
 --enable-version3 \
 --enable-hardcoded-tables \
 --disable-ffplay \
