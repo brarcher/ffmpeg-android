@@ -39,6 +39,7 @@ make clean
 --enable-libfribidi \
 --enable-libmp3lame \
 --enable-fontconfig \
+--disable-linux-perf \
 --enable-pthreads \
 --disable-debug \
 --disable-network \
