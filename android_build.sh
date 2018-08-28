@@ -10,6 +10,11 @@ if [ $? -eq 0 ]; then
   patch -p0 -f fontconfig/src/fcxml.c < android_donot_use_lconv.patch
 fi
 
+patch  -p0 -N --dry-run --silent -f ffmpeg/configure < ffmpeg_add_zlib_to_fontconfig_and_freetype.patch 1>/dev/null
+if [ $? -eq 0 ]; then
+  patch -p0 -f ffmpeg/configure < ffmpeg_add_zlib_to_fontconfig_and_freetype.patch
+fi
+
 for i in "${SUPPORTED_ARCHITECTURES[@]}"
 do
   echo "Building for architecture $i"
