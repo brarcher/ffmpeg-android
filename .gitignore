@@ -5,6 +5,7 @@ libpng-*
 expat-*
 fribidi-*
 lame-*
+libuuid-*
 
 # Created by http://www.gitignore.io
 
