@@ -1,7 +1,7 @@
 [FFmpeg-Android](http://hiteshsondhi88.github.io/ffmpeg-android/) [![Build Status](https://travis-ci.org/brarcher/ffmpeg-android.svg?branch=master)](https://travis-ci.org/brarcher/ffmpeg-android)
 ==============
 
-* FFmpeg for Android compiled with x264, libass, fontconfig, freetype and fribidi
+* FFmpeg for Android compiled with x264, libass, fontconfig, freetype, fribidi, libuuid, and lame
 * Supports Android L
 * [FFmpeg Android Library](https://github.com/brarcher/ffmpeg-android-java)
 
