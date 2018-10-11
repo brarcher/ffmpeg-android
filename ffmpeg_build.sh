@@ -41,7 +41,6 @@ make clean
 --enable-fontconfig \
 --enable-pthreads \
 --disable-debug \
---disable-ffserver \
 --disable-network \
 --disable-filters \
 --enable-filter=fps \
