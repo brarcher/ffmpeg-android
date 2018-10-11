@@ -2,7 +2,7 @@
 
 . abi_settings.sh $1 $2 $3
 
-pushd lame-3.99.5
+pushd lame-3.100
 
 make clean
 
