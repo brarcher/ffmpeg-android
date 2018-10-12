@@ -44,6 +44,13 @@ NDK_SYSROOT=${TOOLCHAIN_PREFIX}/sysroot
 
 export PKG_CONFIG_LIBDIR="${TOOLCHAIN_PREFIX}/lib/pkgconfig"
 
+cat <<EOF > "${PKG_CONFIG_LIBDIR}"/zlib.pc
+Name: zlib
+Description: zlib
+Version: android-ndk
+Libs: -lz
+EOF
+
 if [ $3 == 1 ]; then
   export CC="${CROSS_PREFIX}gcc --sysroot=${NDK_SYSROOT}"
   export LD="${CROSS_PREFIX}ld"

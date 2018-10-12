@@ -39,9 +39,9 @@ make clean
 --enable-libfribidi \
 --enable-libmp3lame \
 --enable-fontconfig \
+--disable-linux-perf \
 --enable-pthreads \
 --disable-debug \
---disable-ffserver \
 --disable-network \
 --disable-filters \
 --enable-filter=fps \
@@ -63,7 +63,7 @@ ${YASM_OPTION} \
 --prefix="${2}/build/${1}" \
 --extra-cflags="-I${TOOLCHAIN_PREFIX}/include $CFLAGS" \
 --extra-ldflags="-L${TOOLCHAIN_PREFIX}/lib $LDFLAGS" \
---extra-libs="-lpng -lexpat -lm" \
+--extra-libs="-lpng -lexpat -lm -luuid" \
 --extra-cxxflags="$CXX_FLAGS" || exit 1
 
 make -j${NUMBER_OF_CORES} && make install || exit 1
